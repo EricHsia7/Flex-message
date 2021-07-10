@@ -388,9 +388,7 @@ liff.init({
     ])
     .then(function (res) {
       if (res) {
-        setTimeout(function() {
-liff.closeWindow();
-        },1);
+       
         // succeeded in sending a message through TargetPicker
         console.log(`[${res.status}] Message sent!`);
         
@@ -400,24 +398,18 @@ liff.closeWindow();
           // LINE 10.3.0 - 10.10.0
           // Old LINE will access here regardless of user's action
           console.log('TargetPicker was opened at least. Whether succeeded to send message is unclear');
-          setTimeout(function() {
-liff.closeWindow();
-        },1);
+          
         } else {
           // LINE 10.11.0 -
           // sending message canceled
           console.log('TargetPicker was closed!');
-          setTimeout(function() {
-liff.closeWindow();
-        },1);
+          
         }
       }
     }).catch(function (error) {
       // something went wrong before sending a message
       console.log('something wrong happen');
-    setTimeout(function() {
-liff.closeWindow();
-        },1);
+    
     })
 }
 })
