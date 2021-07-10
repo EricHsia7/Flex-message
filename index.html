@@ -329,7 +329,7 @@ liff.init({
   //share
     $('#sharejson').click(function() {
   if (liff.isApiAvailable('shareTargetPicker')) {
-  liff.shareTargetPicker([JSON.parse($('.json-text').val())])
+  liff.shareTargetPicker([JSON.parse(String($('.json-text').val()))])
     .then(function (res) {
       if (res) {
        
