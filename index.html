@@ -143,6 +143,18 @@
   font-size:var(--font-size);
   line-height:var(--font-size);
 }
+  .degbtn {
+    width:80px;
+  height:45px;
+  border-radius:12px;
+  background:rgba(3, 71, 76, 1);
+  color:#fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight:700;
+  }
 /*json*/
 .json-text {
   width:95%;
@@ -296,7 +308,7 @@ $('.t').click(function() {
   $('.tlines').width(parseInt($(this).attr('w')));
 });
   ripple('.t','rgba(3, 71, 76, 1)','0.4',1200,'true');
-ripple('.sbtn','#fff','0.4',1200,'true');
+ripple('.sbtn,.degbtn','#fff','0.4',1200,'true');
   
 
   
