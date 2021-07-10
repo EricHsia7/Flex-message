@@ -368,7 +368,7 @@ liff.init({
       }
       else {
   if (liff.isApiAvailable('shareTargetPicker')) {
-  liff.shareTargetPicker([JSON.parse(String('{"type": "flex","altText":"...","contents":' + $('.json-text').val()))])
+  liff.shareTargetPicker([JSON.parse(String('{"type": "flex","altText":"...","contents":' + $('.json-text').val() + '}'))])
     .then(function (res) {
       if (res) {
        
