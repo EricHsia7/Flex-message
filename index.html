@@ -306,8 +306,9 @@ $('.t').click(function() {
   ripple('.t','rgba(3, 71, 76, 1)','0.4',1200,'true');
 ripple('.sbtn','#fff','0.4',1200,'true');
   
-  
-  liff.init({
+</script>
+<script>
+liff.init({
     liffId: "1656199368-GEwe5M5l" // Use own liffId
   })
   .then(() => {
@@ -316,8 +317,116 @@ ripple('.sbtn','#fff','0.4',1200,'true');
   if (!liff.isLoggedIn()) {
   liff.login({ redirectUri: "https://erichsia7.github.io/Flex-message/" });
 }
+  //getname
   
-  
-  
-  
+  liff.getProfile()
+.then(profile => {
+  const name = profile.displayName ;
+    
+  //share
+  if (liff.isApiAvailable('shareTargetPicker')) {
+  liff.shareTargetPicker([
+{
+  "type": "flex",
+  "altText": name + "向您傳送了Colors",
+  "contents": {
+    "type": "bubble",
+    "hero": {
+        "type": "image",
+        "url": "https://singlecolorimage.com/get/" + co.split('#')[1] + "/100x100",
+        "size": "full",
+        "aspectRatio": "23:13",
+        "aspectMode": "cover"
+    },
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+    {
+                "type": "text",
+                "text": co,
+                "weight": "bold",
+                "size": "xl"
+     },
+     {
+        "type": "text",
+        "text": " ",
+        "size": "xs"
+      },
+      {
+                "type": "button",
+                "style": "secondary",
+                "height": "sm",
+                "action": {
+                    "type": "uri",
+                    "label": "查看",
+                    "uri": "https://line.me/R/app/1656197609-1DNP6Krg?s=1&c=" + btoa(co) + '&r=' + genid('random')
+                }
+            },
+            {
+        "type": "text",
+        "text": " ",
+        "size": "xs"
+            },
+            {
+                "type": "button",
+                "style": "secondary",
+                "height": "sm",
+                "action": {
+                    "type": "uri",
+                    "label": "分享",
+                    "uri": "http://line.me/R/app/1656197609-DznLgN7A?c=" + btoa(co)
+                }
+            }
+        
+        
+        
+      ]
+    }
+  }
+}
+    ])
+    .then(function (res) {
+      if (res) {
+        setTimeout(function() {
+liff.closeWindow();
+        },1);
+        // succeeded in sending a message through TargetPicker
+        console.log(`[${res.status}] Message sent!`);
+        
+      } else {
+        const [majorVer, minorVer] = (liff.getLineVersion() || "").split('.');
+        if (parseInt(majorVer) == 10 && parseInt(minorVer) < 11) {
+          // LINE 10.3.0 - 10.10.0
+          // Old LINE will access here regardless of user's action
+          console.log('TargetPicker was opened at least. Whether succeeded to send message is unclear');
+          setTimeout(function() {
+liff.closeWindow();
+        },1);
+        } else {
+          // LINE 10.11.0 -
+          // sending message canceled
+          console.log('TargetPicker was closed!');
+          setTimeout(function() {
+liff.closeWindow();
+        },1);
+        }
+      }
+    }).catch(function (error) {
+      // something went wrong before sending a message
+      console.log('something wrong happen');
+    setTimeout(function() {
+liff.closeWindow();
+        },1);
+    })
+}
+})
+.catch((err) => {
+  console.log('error', err);
+});
+  })
+  .catch((err) => {
+    // Error happens during initialization
+    console.log(err.code, err.message);
+  });
 </script>
