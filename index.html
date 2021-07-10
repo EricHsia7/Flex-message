@@ -223,7 +223,7 @@
     <textarea class="json-text" placeholder="json"></textarea>
     
     <div class="sendbar">
-      <div class="sbtn" ripple-onclick="sharejson()">分享</div>
+      <div class="sbtn" id="sharejson">分享</div>
       <div class="sbtn m5">JSON</div>
     </div>
   </div>
@@ -306,8 +306,9 @@ $('.t').click(function() {
   ripple('.t','rgba(3, 71, 76, 1)','0.4',1200,'true');
 ripple('.sbtn','#fff','0.4',1200,'true');
   
-</script>
-<script>
+
+  
+  
 liff.init({
     liffId: "1656199368-GEwe5M5l" // Use own liffId
   })
@@ -324,6 +325,7 @@ liff.init({
   const name = profile.displayName ;
     
   //share
+    $('#sharejson').click(function() {
   if (liff.isApiAvailable('shareTargetPicker')) {
   liff.shareTargetPicker([
 {
@@ -412,6 +414,8 @@ liff.init({
     
     })
 }
+    });    
+  //shend    
 })
 .catch((err) => {
   console.log('error', err);
