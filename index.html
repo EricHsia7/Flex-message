@@ -90,6 +90,10 @@
 }
 #p-create {
   left:0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction:column;
 }
 #p-json {
   left:33.33%;
@@ -201,24 +205,10 @@
 </div>
 
 <div class="allpage">
-  <div class="page" id="p-create">
-    <div class="preview">
-      <div class="card">
-        <div class="hero">
-          <img src="https://source.unsplash.com/random">
-        </div>
-        <div class="bod">
-          <h1 style="--font-size:22px">Unsplash image</h1>
-        </div>
-        
-        
-      </div>
-    </div>
-    
-    <div class="sendbar">
-      <div class="sbtn">分享</div>
-      <div class="sbtn m5">JSON</div>
-    </div>
+  
+  <div class="page" id="p-create"> 
+    <div class="degbtn" ripple-onclick="window.open('https://developers.line.biz/flex-simulator/')">開啟</div>
+    <p>目前沒有簡易編輯器，請先使用LINE官方的完整編輯器。</p>
   </div>
   
   
