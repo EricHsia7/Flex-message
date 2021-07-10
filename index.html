@@ -5,3 +5,256 @@
 </head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap');
+.m5 {
+  margin-left:5px
+}
+/*tab*/
+.tab {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:45px;
+  background:#fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction:row;
+  border-bottom:1px #e3e3e3 solid;
+}
+.tab .t {
+  height:45px;
+  width:33.4%;
+  max-width:80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size:15px;
+  font-weight:500;
+  color:rgba(3, 71, 76, 1);
+  font-family: 'Noto Sans TC', sans-serif;
+  transition:0.3s;
+}
+.tab .t[s="1"] {
+  background:rgba(3, 71, 76, 0);
+  color:rgba(3, 71, 76, 1);
+  font-weight:700;
+}
+.tline_box {
+  width:100%;
+  max-width:240px;
+  height:3px;
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:-1px;
+}
+.tline {
+  position:absolute;
+  left:0%;
+  top:0px;
+  background:rgba(3, 71, 76, 0);
+  height:3px;
+  width:33.4%;
+  transition:0.3s;
+}
+.tlines {
+  position:absolute;
+  left:50%;
+  top:0px;
+  background:rgba(3, 71, 76, 1);
+  height:3px;
+  width:65px;
+  transform:translateX(-50%);
+  border-radius:8px 8px 0px 0px;
+  transition:0.3s;
+}
+/*page*/
+.allpage {
+  width:300%;
+  position:fixed;
+  top:46px;
+  left:0%;
+  height:calc(100% - 46px);
+  background:#fff;
+  transition:0.3s;
+}
+.page {
+  position:absolute;
+  top:0px;
+  width:33.33%;
+  height:100%;
+  background:#fff;
+}
+#p-create {
+  left:0%;
+}
+#p-json {
+  left:33.33%;
+  width:33.34%;
+}
+#p-other {
+  left:66.67%;
+}
+/*card*/
+.preview {
+  position:absolute;
+  top:0px;
+  left:0px;
+  width:100%;
+  max-height:30%;
+  background:url(https://erichsia7.github.io/Flex-message/image/F92B4F77-00AD-462A-A17F-09F1B7559015.jpeg);
+  background-size:cover;
+  background-position:center;
+  padding-top:20px;
+  padding-bottom:20px;
+  overflow:scroll;
+}
+.card {
+  width:250px;
+  min-height:350px;
+  border-radius:12px;
+  background:#fff;
+  position:relative;
+  left:50%;
+  transform:translateX(-50%);
+  overflow:hidden;
+}
+.hero img {
+  height:150px;
+  width:100%;
+  object-fit:cover;
+  overflow:hidden;
+  border-radius:12px 12px 0px 0px;
+}
+.bod {
+  padding-left:8px;
+}
+.card h1 {
+  padding:0px;
+  margin:0px;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size:var(--font-size);
+  line-height:var(--font-size);
+}
+/*json*/
+.json-text {
+  width:95%;
+  max-width:250px;
+  padding:10px;
+  border:none;
+  background:#f5f5f5;
+  height:300px;
+  border-radius:12px;
+  position:relative;
+  left:50%;
+  transform:translateX(-50%);
+  margin-top:20px;
+  font-family: 'Noto Sans TC', sans-serif;
+  line-height:12px;
+  font-size:12px;
+}
+/*send*/
+.sendbar {
+  position:absolute;
+  left:0px;
+  bottom:0px;
+  width:100%;
+  height:45px;
+  background:#fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction:row;
+  border-top:1px #e3e3e3 solid;
+}
+.sbtn {
+  width:calc(50% - 5px);
+  height:40px;
+  border-radius:12px;
+  background:rgba(3, 71, 76, 1);
+  color:#fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight:700;
+}
+</style>
+
+
+
+<div class="tab">
+  <div class="t" s="1" t="c" w="65" i="create">CREATE</div>
+  <div class="t" s="0" t="j" w="48" i="json">JSON</div>
+  <div class="t" s="0" t="o" w="60" i="other">OTHER</div>
+  <div class="tline_box">
+    <div class="tline">
+      <div class="tlines"></div>
+    </div>
+  </div>
+</div>
+
+<div class="allpage">
+  <div class="page" id="p-create">
+    <div class="preview">
+      <div class="card">
+        <div class="hero">
+          <img src="https://source.unsplash.com/random">
+        </div>
+        <div class="bod">
+          <h1 style="--font-size:22px">Unsplash image</h1>
+        </div>
+        
+        
+      </div>
+    </div>
+    
+    <div class="sendbar">
+      <div class="sbtn">分享</div>
+      <div class="sbtn m5">JSON</div>
+    </div>
+  </div>
+  
+  
+  <div class="page" id="p-json">
+    <textarea class="json-text" placeholder="json"></textarea>
+    
+    <div class="sendbar">
+      <div class="sbtn" ripple-onclick="sharejson()">分享</div>
+      <div class="sbtn m5">JSON</div>
+    </div>
+  </div>
+  
+  <div class="page" id="p-other">
+    其他
+  </div>
+</div>
+
+<script src="https://erichsia7.github.io/ripple.js/ripple.min.js"></script>
+<script>
+ripple('.t','rgba(3, 71, 76, 1)','0.4',1200,'true');
+ripple('.sbtn','#fff','0.4',1200,'true');
+$('.t').click(function() {
+  //create
+  if($(this).attr('t') === 'c') {
+    $('.tline').css({'left':'0%'});
+    $('.allpage').css({'left':'0%'})
+  }
+  //json
+  if($(this).attr('t') === 'j') {
+    $('.tline').css({'left':'33%'});
+    $('.allpage').css({'left':'-100%'})
+  }
+  //other
+  if($(this).attr('t') === 'o') {
+    $('.tline').css({'left':'67%'});
+    $('.allpage').css({'left':'-200%'})
+  }
+  $('.t').attr('s','0');
+  $(this).attr('s','1');
+  $('.tlines').width(parseInt($(this).attr('w')));
+});
+</script>
