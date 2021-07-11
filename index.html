@@ -199,10 +199,11 @@
   font-family: 'Noto Sans TC', sans-serif;
   font-weight:700;
 }
-  #sharejson {
+  #sharejson ,#geturl{
     width:calc(100% - 5px);
     max-width:350px;
   }
+  
 </style>
 
 
@@ -229,14 +230,25 @@
   
   <div class="page" id="p-json">
     <textarea class="json-text" placeholder="json"></textarea>
-    
+        <div class="select" id="jsontype">
+<li value="1">FlexMessage(JSON)</li>
+<li value="2">OtherMessage(JSON)</li>
+</div>
     <div class="sendbar">
-      <div class="sbtn" id="sharejson">分享</div>
+      <div class="sbtn" id="sharejson">Send</div>
     </div>
   </div>
   
   <div class="page" id="p-other">
-    其他
+    <textarea></textarea>
+    <div class="select" id="msgurltype">
+<li value="1">TextMessage(Text)</li>
+<li value="2">OtherMessage(JSON)</li>
+</div>
+
+    <div class="sendbar">
+      <div class="sbtn" id="geturl">Get URL</div>
+    </div>
   </div>
 </div>
 
@@ -409,3 +421,4 @@ liff.init({
     console.log(err.code, err.message);
   });
 </script>
+<script src="https://erichsia7.github.io/select.js/selsect.js"></script>
