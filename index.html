@@ -209,9 +209,9 @@
 
 
 <div class="tab">
-  <div class="t" s="1" t="c" w="65" i="create">CREATE</div>
-  <div class="t" s="0" t="j" w="48" i="json">JSON</div>
+  <div class="t" s="1" t="j" w="48" i="json">JSON</div>
   <div class="t" s="0" t="o" w="65" i="other">MSGURL</div>
+  <div class="t" s="0" t="c" w="65" i="create">FLEX</div>
   <div class="tline_box">
     <div class="tline">
       <div class="tlines"></div>
@@ -221,11 +221,7 @@
 
 <div class="allpage">
   
-  <div class="page" id="p-create"> 
-    <div class="degbtn" ripple-onclick="window.open('https://developers.line.biz/flex-simulator/')">開啟</div>
-    <p style="max-width:80%;word-break: break-all;">目前沒有簡易編輯器，請先使用LINE官方的完整編輯器。</p>
-    <p style="max-width:80%;word-break: break-all;">提示：編輯完成後，按下右上角的"View as json"，並按下"Copy"，在這裡的"JSON"頁內的輸入框貼上。</p>
-  </div>
+
   
   
   <div class="page" id="p-json">
@@ -249,6 +245,12 @@
     <div class="sendbar">
       <div class="sbtn" id="geturl">Get URL</div>
     </div>
+  </div>
+  
+    <div class="page" id="p-create"> 
+    <div class="degbtn" ripple-onclick="window.open('https://developers.line.biz/flex-simulator/')">開啟</div>
+    <p style="max-width:80%;word-break: break-all;">目前沒有簡易編輯器，請先使用LINE官方的完整編輯器。</p>
+    <p style="max-width:80%;word-break: break-all;">提示：編輯完成後，按下右上角的"View as json"，並按下"Copy"，在這裡的"JSON"頁內的輸入框貼上。</p>
   </div>
 </div>
 
@@ -305,8 +307,8 @@ genid5 += '-' + genid4 ;
 $('.t').click(function() {
   //create
   if($(this).attr('t') === 'c') {
-    $('.tline').css({'left':'0%'});
-    $('.allpage').css({'left':'0%'})
+    $('.tline').css({'left':'67%'});
+    $('.allpage').css({'left':'-200%'})
   }
   //json
   if($(this).attr('t') === 'j') {
@@ -315,8 +317,8 @@ $('.t').click(function() {
   }
   //other
   if($(this).attr('t') === 'o') {
-    $('.tline').css({'left':'67%'});
-    $('.allpage').css({'left':'-200%'})
+    $('.tline').css({'left':'0%'});
+    $('.allpage').css({'left':'0%'})
   }
   $('.t').attr('s','0');
   $(this).attr('s','1');
