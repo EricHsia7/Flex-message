@@ -559,13 +559,15 @@ liff.init({
   
   $('#geturl').click(function() {
     if($('#msgurltype').attr('value') === '1') {
-      $('#shortinp').val('https://line.me/R/app/1656199368-Ov5Jvmvg?t=' + encodeURIComponent($('#msg-text').val()));
+      $('#shortinp').val('https://line.me/R/app/1656199368-Ov5Jvmvg?t=' + encodeURIComponent($('.msg-text').val()));
       $('.shorturlbg,.shorturl').fadeIn(222);
-
     }
     else {
       alert('目前不支援，後續將更新😚');
     }
   });
+  $('.closebtn').click(function() {
+    $('.shorturlbg,.shorturl').fadeOut(222);
+    });
 </script>
 <script src="https://erichsia7.github.io/select.js/selsect.js"></script>
