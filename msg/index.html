@@ -63,6 +63,7 @@ liff.init({
   if (!liff.isLoggedIn()) {
   liff.login({ redirectUri: "https://erichsia7.github.io/Flex-message/msg/" });
 }
+   const accessToken = liff.getAccessToken();
   //getname
   
   liff.getProfile()
