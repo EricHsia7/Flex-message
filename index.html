@@ -309,6 +309,9 @@ backdrop-filter: blur(15px);
 }
   
   /*fri*/
+  .fri * {
+    transition:0.3s;
+  }
   .fri {
   position:fixed;
   top:0px;
@@ -324,6 +327,29 @@ backdrop-filter: blur(15px);
   width:130px;
   height:130px;
   -webkit-user-select:none;
+}
+  .fri p {
+  color:rgba(3, 71, 76, 1);
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight:700;
+  -webkit-user-select:none;
+}
+.friaddbtn {
+  width:calc(100% - 5px);
+  max-width:350px;
+  height:45px;
+  border-radius:12px;
+  background:rgba(3, 71, 76, 1);
+  color:#fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight:700;
+  position:fixed;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:10px;
 }
 </style>
 
@@ -480,7 +506,9 @@ liff.init({
     $('.fri').fadeOut('222')
   }
       else {
-         location.href = 'https://line.me/R/ti/p/%40663xflop' ;
+        $('.fri').append('<p>您必須先加入好友，才能使用這項功能。</p><div class="friaddbtn">加入好友</div>').css({'flex-direction':'column'});
+        $('.friaddbtn').attr("ripple-onclick","location.href = 'https://line.me/R/ti/p/%40663xflop';");
+        ripple('.friaddbtn','#fff','0.3',888,'true');
       }
      });
   //getname
