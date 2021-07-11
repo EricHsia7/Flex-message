@@ -72,7 +72,6 @@ liff.init({
   const name = profile.displayName ;
     
   //share
-     $('.btn').click(function() {
   liff.sendMessages([
   {
     type: 'text',
@@ -85,7 +84,6 @@ liff.init({
   .catch((err) => {
     console.log('error', err);
   });
-     });
   //shend    
 })
 .catch((err) => {
