@@ -11,7 +11,11 @@
   margin-left:5px
 }
   * {font-family: 'Noto Sans TC', sans-serif;}
+  p {-webkit-user-select: none;}
 /*tab*/
+  .tab * {
+  -webkit-user-select: none;
+  }
 .tab {
   position:fixed;
   top:0px;
@@ -179,6 +183,9 @@
   font-size:12px;
 }
 /*send*/
+  .sendbar * {
+    -webkit-user-select: none;
+  }
 .sendbar {
   position:absolute;
   left:0px;
@@ -222,6 +229,7 @@
   -webkit-backdrop-filter: blur(15px);
 backdrop-filter: blur(15px);
   display:none;
+    -webkit-user-select: none;
 }
 .shorturl {
   width:280px;
@@ -233,12 +241,14 @@ backdrop-filter: blur(15px);
   transform:translate(-50%,-50%);
   border-radius:15px;
   display:none;
+  -webkit-user-select: none;
 }
 .shorturl h3 {
   color:rgba(3, 71, 76, 1);
   margin-left:10px;
   font-family: 'Noto Sans TC', sans-serif;
   font-weight:700;
+  -webkit-user-select: none;
 }
 .shorturl input {
   border:none;
@@ -267,6 +277,7 @@ backdrop-filter: blur(15px);
   right:5px;
   bottom:5px;
   color:rgba(3, 71, 76, 1);
+  -webkit-user-select: none;
 }
 .shbot .closebtn {
   width:55px;
@@ -284,6 +295,7 @@ backdrop-filter: blur(15px);
   color:rgba(3, 71, 76, 1);
   right:65px;
   width:55px;
+  -webkit-user-select: none;
 }
 
 .shbot {
@@ -291,6 +303,7 @@ backdrop-filter: blur(15px);
   bottom:0px;
   left:0px;
   width:100%;
+  -webkit-user-select: none;
 }
 </style>
 
