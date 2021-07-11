@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+<div class="btn">.</div>
 <script>
    var getUrlString = location.href;
 var url = new URL(getUrlString);
@@ -71,6 +72,7 @@ liff.init({
   const name = profile.displayName ;
     
   //share
+     $('.btn').click(function() {
   liff.sendMessages([
   {
     type: 'text',
@@ -83,6 +85,7 @@ liff.init({
   .catch((err) => {
     console.log('error', err);
   });
+     });
   //shend    
 })
 .catch((err) => {
@@ -93,6 +96,7 @@ liff.init({
     // Error happens during initialization
     console.log(err.code, err.message);
   });
+   $('.btn').click();
 </script>
 <script>
    
