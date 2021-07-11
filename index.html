@@ -237,6 +237,8 @@ backdrop-filter: blur(15px);
 .shorturl h3 {
   color:rgba(3, 71, 76, 1);
   margin-left:10px;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight:700;
 }
 .shorturl input {
   border:none;
@@ -557,6 +559,12 @@ liff.init({
   
   $('#geturl').click(function() {
     $('.shorturlbg,.shorturl').fadeIn(222);
+    if($('#msgurltype').attr('value') === '1') {
+      $('#shortinp').val('https://line.me/R/app/1656199368-Ov5Jvmvg?t=' + encodeURIComponent($('#msg-text').val()));
+    }
+    else {
+      alert('目前不支援，後續將更新😚');
+    }
   });
 </script>
 <script src="https://erichsia7.github.io/select.js/selsect.js"></script>
