@@ -89,18 +89,18 @@
   height:100%;
   background:#fff;
 }
-#p-create {
+#p-json {
   left:0%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction:column;
 }
-#p-json {
+#p-msgurl {
   left:33.33%;
   width:33.34%;
 }
-#p-other {
+#p-flex {
   left:66.67%;
 }
 /*card*/
@@ -220,10 +220,6 @@
 </div>
 
 <div class="allpage">
-  
-
-  
-  
   <div class="page" id="p-json">
     <textarea class="json-text" placeholder="json"></textarea>
         <div class="select" id="jsontype">
@@ -235,7 +231,7 @@
     </div>
   </div>
   
-  <div class="page" id="p-other">
+  <div class="page" id="p-msgurl">
     <textarea></textarea>
     <div class="select" id="msgurltype">
 <li value="1">TextMessage(Text)</li>
@@ -247,7 +243,7 @@
     </div>
   </div>
   
-    <div class="page" id="p-create"> 
+    <div class="page" id="p-flex"> 
     <div class="degbtn" ripple-onclick="window.open('https://developers.line.biz/flex-simulator/')">開啟</div>
     <p style="max-width:80%;word-break: break-all;">目前沒有簡易編輯器，請先使用LINE官方的完整編輯器。</p>
     <p style="max-width:80%;word-break: break-all;">提示：編輯完成後，按下右上角的"View as json"，並按下"Copy"，在這裡的"JSON"頁內的輸入框貼上。</p>
