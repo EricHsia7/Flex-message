@@ -558,9 +558,10 @@ liff.init({
   });
   
   $('#geturl').click(function() {
-    $('.shorturlbg,.shorturl').fadeIn(222);
     if($('#msgurltype').attr('value') === '1') {
       $('#shortinp').val('https://line.me/R/app/1656199368-Ov5Jvmvg?t=' + encodeURIComponent($('#msg-text').val()));
+      $('.shorturlbg,.shorturl').fadeIn(222);
+
     }
     else {
       alert('目前不支援，後續將更新😚');
