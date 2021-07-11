@@ -65,6 +65,17 @@ liff.init({
   liff.login({ redirectUri: "https://erichsia7.github.io" });
 }
    const accessToken = liff.getAccessToken();
+   //checkfriend
+   liff.getFriendship().then(data => {
+  if (data.friendFlag) {
+    $('.fri').fadeOut('222')
+  }
+      else {
+         
+      }
+});
+   
+   
   //getname
   
   liff.getProfile()
