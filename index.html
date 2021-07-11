@@ -569,5 +569,10 @@ liff.init({
   $('.closebtn').click(function() {
     $('.shorturlbg,.shorturl').fadeOut(222);
     });
+  $('.copybtn').click(function() { 
+    var copys2 = $('.msg-text');
+copys2.select();
+document.execCommand("Copy");
+  });
 </script>
 <script src="https://erichsia7.github.io/select.js/selsect.js"></script>
