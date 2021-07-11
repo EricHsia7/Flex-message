@@ -210,8 +210,8 @@
 
 <div class="tab">
   <div class="t" s="1" t="j" w="48" i="json">JSON</div>
-  <div class="t" s="0" t="o" w="65" i="other">MSGURL</div>
-  <div class="t" s="0" t="c" w="65" i="create">FLEX</div>
+  <div class="t" s="0" t="m" w="65" i="msgurl">MSGURL</div>
+  <div class="t" s="0" t="f" w="65" i="flex">FLEX</div>
   <div class="tline_box">
     <div class="tline">
       <div class="tlines"></div>
@@ -305,20 +305,20 @@ genid5 += '-' + genid4 ;
 
 }
 $('.t').click(function() {
-  //create
-  if($(this).attr('t') === 'c') {
-    $('.tline').css({'left':'67%'});
-    $('.allpage').css({'left':'-200%'})
-  }
   //json
   if($(this).attr('t') === 'j') {
+    $('.tline').css({'left':'0%'});
+    $('.allpage').css({'left':'0%'})
+  }
+  //msgurl
+  if($(this).attr('t') === 'm') {
     $('.tline').css({'left':'33%'});
     $('.allpage').css({'left':'-100%'})
   }
-  //other
-  if($(this).attr('t') === 'o') {
-    $('.tline').css({'left':'0%'});
-    $('.allpage').css({'left':'0%'})
+  //flex
+  if($(this).attr('t') === 'f') {
+    $('.tline').css({'left':'67%'});
+    $('.allpage').css({'left':'-200%'})
   }
   $('.t').attr('s','0');
   $(this).attr('s','1');
