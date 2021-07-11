@@ -209,6 +209,87 @@
     max-width:350px;
   }
   
+  
+  /*copylink*/
+  
+  .shorturlbg {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:100%;
+  background:rgba(0, 0, 0, 0.6);
+  -webkit-backdrop-filter: blur(15px);
+backdrop-filter: blur(15px);
+  display:none;
+}
+.shorturl {
+  width:280px;
+  height:130px;
+  background:#fff;
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  border-radius:15px;
+  display:none;
+}
+.shorturl h3 {
+  color:rgba(3, 71, 76, 1);
+  margin-left:10px;
+}
+.shorturl input {
+  border:none;
+  border-bottom:2px rgba(3, 71, 76, 1) solid;
+  background:rgba(3, 71, 76, 0.1);
+  border-radius:0px;
+  height:28px;
+  width:250px;
+  position:absolute;
+  bottom:45px;
+  left:10px;
+  color:rgba(3, 71, 76, 1)
+}
+.shbot .copybtn {
+  width:55px;
+  height:35px;
+  border-radius:10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size:16px;
+  font-weight:700;
+  font-family: 'Noto Sans TC', sans-serif;
+  background:rgba(0,0,0,0);
+  position:absolute;
+  right:5px;
+  bottom:5px;
+  color:rgba(3, 71, 76, 1);
+}
+.shbot .closebtn {
+  width:55px;
+  height:35px;
+  border-radius:10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size:16px;
+  font-weight:700;
+  font-family: 'Noto Sans TC', sans-serif;
+  background:rgba(0,0,0,0);
+  position:absolute;
+  bottom:5px;
+  color:rgba(3, 71, 76, 1);
+  right:65px;
+  width:55px;
+}
+
+.shbot {
+  position:absolute;
+  bottom:0px;
+  left:0px;
+  width:100%;
+}
 </style>
 
 
@@ -254,6 +335,21 @@
     <p style="max-width:80%;word-break: break-all;">提示：編輯完成後，按下右上角的"View as json"，並按下"Copy"，在這裡的"JSON"頁內的輸入框貼上，並選擇Flex。</p>
   </div>
 </div>
+
+
+
+<div class="shorturlbg">
+</div>
+<div class="shorturl">
+  <h3>MSGURL</h3>
+  <input type="text" id="shortinp">
+  <div class="shbot">
+    <div class="closebtn">Close</div>
+  <div class="copybtn">Copy</div>
+  </div>
+</div>
+
+
 
 <script src="https://erichsia7.github.io/ripple.js/ripple.min.js"></script>
 <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
@@ -457,6 +553,10 @@ liff.init({
   .catch((err) => {
     // Error happens during initialization
     console.log(err.code, err.message);
+  });
+  
+  $('#geturl').click(function() {
+    $('#shorturlbg,#shorturl').fadeIn(222);
   });
 </script>
 <script src="https://erichsia7.github.io/select.js/selsect.js"></script>
