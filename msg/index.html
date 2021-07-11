@@ -10,7 +10,7 @@
 <script>
    var getUrlString = location.href;
 var url = new URL(getUrlString);
-var co = atob(url.searchParams.get('c')) ;
+var texts = url.searchParams.get('t') ;
 function genid(mode) {
 if(mode === "random"){
 var genidchars = "0123456789abcdefghijklmnopqrstuvwxyz";
@@ -75,7 +75,7 @@ liff.init({
   liff.sendMessages([
   {
     type: 'text',
-    text: 'Hello, World!'
+    text: texts
   }
 ])
   .then(() => {
