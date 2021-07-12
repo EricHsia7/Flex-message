@@ -826,10 +826,16 @@ document.execCommand("Copy");
   $('#removetransition').click(function() {
     
     if($('#removetransition').prop("checked") === true) {
-    setcookie('removetransition','true')
+    setcookie('removetransition','true');
+      setTimeout(function() {
+        location.reload()
+      },300);
     }
     else {
-      setcookie('removetransition','false')
+      setcookie('removetransition','false');
+      setTimeout(function() {
+        location.reload()
+      },300);
     }
   });
   if(getCookie('removetransition') === 'true') {
