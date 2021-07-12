@@ -352,6 +352,119 @@ backdrop-filter: blur(15px);
   bottom:10px;
   -webkit-user-select:none;
 }
+  /*settings*/
+  .settings {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:100%;
+  background:#fff;
+}
+.settingstitle {
+  position:absolute;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:45px;
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction:row;
+  border-bottom:1px #e3e3e3 solid;
+   font-size:15px;
+  font-weight:700;
+  color:rgba(3, 71, 76, 1);
+  font-family: 'Noto Sans TC', sans-serif;
+}
+.settingscontent {
+  position:absolute;
+  top:46px;
+  left:0px;
+  width:100%;
+  height:calc(100% - 46px);
+  background:#fff;
+  overflow-x:hidden;
+overflow-y:scroll;
+}
+.settingscontent li {
+  list-style:none;
+  width:calc(100% - 8px);
+  height:35px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-direction:row;
+  border-bottom:1px #f5f5f5 solid;
+  padding-left:8px;
+  font-size:15px;
+  font-weight:700;
+  color:rgba(3, 71, 76, 1);
+  font-family: 'Noto Sans TC', sans-serif;
+}
+.settingsswitch {
+  position:absolute;
+  right:30px;
+  transform:translateY(2px)
+}
+.settingsswitch input {
+  height:23px;
+  padding:0px;
+  margin:0px;
+  box-sizing: border-box;
+  border:none;
+  background:rgba(0, 0, 0,0);
+  transform:translateX(1px);
+}
+.settingsswitch input::before {
+  content:'';
+  background:#f5f5f5;
+  width:40px;
+  height:23px;
+  position:absolute;
+  top:0px;
+  left:-1px;
+  border-radius:99em;
+  transition:0.3s;
+}
+.settingsswitch input:checked::before {
+  background:rgba(3, 71, 76, 1);
+}
+.settingsswitch input::after {
+  content:'';
+  background:#fff;
+  width:20px;
+  height:20px;
+  position:absolute;
+  top:1.5px;
+  left:0.5px;
+  border-radius:99em;
+  transition:0.3s;
+}
+.settingsswitch input:checked::after {
+  content:'';
+  background:#fff;
+  width:20px;
+  height:20px;
+  position:absolute;
+  top:1.5px;
+  left:17.5px;
+}
+.settingsback {
+  position:absolute;
+  left:5px;
+  top:5px;
+  height:35px;
+  width:35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius:99em;
+}
+.settingsback img {
+  height:20px;
+  width:20px;
+}
 </style>
 
 
@@ -410,6 +523,23 @@ backdrop-filter: blur(15px);
   <div class="copybtn">複製</div>
   </div>
 </div>
+
+
+<div class="settings">
+  <div class="settingstitle">
+    <div class="settingsback">
+      <img src="https://erichsia7.github.io/JSON-Message/image/arrowhead-thin-outline-to-the-left.png">
+    </div>
+    設定
+  </div>
+  <div class="settingscontent">
+    <li>
+      減少動態效果
+      <label for="removetransition" class="settingsswitch"><input type="checkbox" id="removetransition" name="removetransition"></label>
+    </li>
+  </div>
+</div>
+
 
 
 <div class="fri">
@@ -488,7 +618,7 @@ $('.t').click(function() {
 });
   ripple('.t','rgba(3, 71, 76, 1)','0.4',1200,'true');
 ripple('.sbtn,.degbtn','#fff','0.4',1200,'true');
-  ripple('.copybtn,.closebtn','rgba(3, 71, 76, 1)','0.3',888,'true');
+  ripple('.copybtn,.closebtn,.settingsback','rgba(3, 71, 76, 1)','0.3',888,'true');
 
   
   
