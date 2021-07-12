@@ -360,6 +360,7 @@ backdrop-filter: blur(15px);
   width:100%;
   height:100%;
   background:#fff;
+  display:none;
 }
 .settingstitle {
   position:absolute;
@@ -777,6 +778,9 @@ liff.init({
     var copys2 = $('.shorturl input');
 copys2.select();
 document.execCommand("Copy");
+  });
+  $('.settingsback').click(function() {
+  $('.settings').fadeOut(222);
   });
 </script>
 <script src="https://erichsia7.github.io/select.js/selsect.js"></script>
