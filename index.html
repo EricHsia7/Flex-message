@@ -650,7 +650,9 @@ $('.t').click(function() {
   $('.tlines').width(parseInt($(this).attr('w')));
 });
   if(getCookie('removetransition') === 'true') {
-    
+    ripple('.t','rgba(3, 71, 76, 0)','0',1,'true');
+ripple('.sbtn,.degbtn','rgba(0, 0, 0, 0)','0',1,'true');
+  ripple('.copybtn,.closebtn,.settingsback,.settingsbtn','rgba(3, 71, 76, 0)','0',1,'true');
   }
   else {
   ripple('.t','rgba(3, 71, 76, 1)','0.4',1200,'true');
