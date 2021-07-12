@@ -466,6 +466,21 @@ overflow-y:scroll;
   height:20px;
   width:20px;
 }
+  .settingsbtn {
+    position:absolute;
+  right:5px;
+  top:5px;
+  height:35px;
+  width:35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius:99em;
+  }
+  .settingsbtn img {
+  height:20px;
+  width:20px;
+}
 </style>
 
 
@@ -474,6 +489,9 @@ overflow-y:scroll;
   <div class="t" s="1" t="j" w="48" i="json">JSON</div>
   <div class="t" s="0" t="m" w="65" i="msgurl">MSGURL</div>
   <div class="t" s="0" t="f" w="48" i="flex">FLEX</div>
+  <div class="settingsbtn">
+    <img src="https://erichsia7.github.io/JSON-Message/image/settings.png">
+  </div>
   <div class="tline_box">
     <div class="tline">
       <div class="tlines"></div>
@@ -619,7 +637,7 @@ $('.t').click(function() {
 });
   ripple('.t','rgba(3, 71, 76, 1)','0.4',1200,'true');
 ripple('.sbtn,.degbtn','#fff','0.4',1200,'true');
-  ripple('.copybtn,.closebtn,.settingsback','rgba(3, 71, 76, 1)','0.3',888,'true');
+  ripple('.copybtn,.closebtn,.settingsback,.settingsbtn','rgba(3, 71, 76, 1)','0.3',888,'true');
 
   
   
@@ -781,6 +799,9 @@ document.execCommand("Copy");
   });
   $('.settingsback').click(function() {
   $('.settings').fadeOut(222);
+  });
+  $('.settingsbtn').click(function() {
+  $('.settings').fadeIn(222);
   });
 </script>
 <script src="https://erichsia7.github.io/select.js/selsect.js"></script>
