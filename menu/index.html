@@ -47,6 +47,60 @@
 </div>
 
 <script src="https://erichsia7.github.io/ripple.js/ripple.min.js"></script>
+<script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
 <script>
   ripple('.cl','rgba(3, 71, 76, 1)','0.4',1200,'true');
+  
+   liff.init({
+    liffId: "1656199368-Ov5Jvmvg" // Use own liffId
+  })
+  .then(() => {
+    // Start to use liff's api
+  //login
+  if (!liff.isLoggedIn()) {
+  liff.login({ redirectUri: "https://erichsia7.github.io" });
+}
+   const accessToken = liff.getAccessToken();
+ 
+
+   
+   
+  //getname
+  
+  liff.getProfile()
+.then(profile => {
+  const name = profile.displayName ;
+    
+  //share
+    function dc() {
+  liff.sendMessages([
+  {
+    type: 'text',
+    text: '說明'
+  }
+])
+  .then(() => {
+    console.log('message sent');
+     liff.closeWindow();
+  })
+  .catch((err) => {
+    console.log('error', err);
+     liff.closeWindow();
+  });
+    }
+    
+    
+  //shend    
+})
+.catch((err) => {
+  console.log('error', err);
+     liff.closeWindow();
+});
+  })
+  .catch((err) => {
+    // Error happens during initialization
+    console.log(err.code, err.message);
+   liff.closeWindow();
+  }); 
+  
 </script>
