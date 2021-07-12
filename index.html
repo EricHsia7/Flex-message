@@ -825,7 +825,7 @@ document.execCommand("Copy");
   });
   $('#removetransition').click(function() {
     
-    if($(this).prop("checked") === true) {
+    if($('#removetransition').prop("checked") === true) {
     setcookie('removetransition','true')
     }
     else {
@@ -833,7 +833,7 @@ document.execCommand("Copy");
     }
   });
   if(getCookie('removetransition') === 'true') {
-    $(this).prop("checked",true);
+    $('#removetransition').prop("checked",true);
     $('*,*::after,*::before').css({'transition':'0s'});
   }
 </script>
