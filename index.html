@@ -695,8 +695,8 @@ liff.init({
 .then(profile => {
   const name = profile.displayName ;
     
-    gtag('event', 'logged-in', {
-    'event_category': 'logged-in',
+    gtag('event', 'logged_in', {
+    'event_category': 'logged_in',
     'event_label':profile.userId,
     'transport_type': 'beacon',
     'event_callback': function(){
