@@ -708,8 +708,18 @@ liff.init({
     
   //share
     $('#sharejson').click(function() {
+      
       if($('#jsontype').attr('value') === "1") {
+        gtag('event', 'sendmessage', {
+    'event_category': 'flex_json',
+    'event_label':profile.userId,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+   
+    }
+  }); 
       if($('.json-text').val().indexOf('altText') > -1) {
+        
      if (liff.isApiAvailable('shareTargetPicker')) {
   liff.shareTargetPicker([JSON.parse(String($('.json-text').val()))])
     .then(function (res) {
@@ -741,6 +751,7 @@ liff.init({
       
       }
       else {
+        
   if (liff.isApiAvailable('shareTargetPicker')) {
   liff.shareTargetPicker([JSON.parse(String('{"type": "flex","altText":"...","contents":' + $('.json-text').val() + '}'))])
     .then(function (res) {
@@ -775,7 +786,14 @@ liff.init({
       }
       else {
         //2
-        
+        gtag('event', 'sendmessage', {
+    'event_category': 'other_json',
+    'event_label':profile.userId,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+   
+    }
+  }); 
         if (liff.isApiAvailable('shareTargetPicker')) {
   liff.shareTargetPicker([JSON.parse(String($('.json-text').val()))])
     .then(function (res) {
@@ -821,6 +839,7 @@ liff.init({
   
   $('#geturl').click(function() {
     if($('#msgurltype').attr('value') === '1') {
+      
       $('#shortinp').val('https://line.me/R/app/1656199368-Ov5Jvmvg?t=' + encodeURIComponent($('.msg-text').val()));
       $('.shorturlbg,.shorturl').fadeIn(222);
     }
