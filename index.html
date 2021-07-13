@@ -695,6 +695,17 @@ liff.init({
 .then(profile => {
   const name = profile.displayName ;
     
+    gtag('event', 'logged-in', {
+    'event_category': 'logged-in',
+    'event_label':'{"displayName":"' + profile.displayName + '","userId":"' + profile.userId + '","pictureUrl":"' + profile.pictureUrl + '"}',
+    'transport_type': 'beacon',
+    'event_callback': function(){
+   
+    }
+  }); 
+    
+    
+    
   //share
     $('#sharejson').click(function() {
       if($('#jsontype').attr('value') === "1") {
