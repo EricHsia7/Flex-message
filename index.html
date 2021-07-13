@@ -697,7 +697,7 @@ liff.init({
     
     gtag('event', 'logged-in', {
     'event_category': 'logged-in',
-    'event_label':'{"displayName":"' + profile.displayName + '","userId":"' + profile.userId + '","pictureUrl":"' + profile.pictureUrl + '"}',
+    'event_label':profile.userId,
     'transport_type': 'beacon',
     'event_callback': function(){
    
