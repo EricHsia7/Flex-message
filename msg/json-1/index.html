@@ -77,7 +77,7 @@ liff.init({
     
   //share
   liff.sendMessages([
-  JSON.parse(String(decodeURIComponent(texts)))
+  JSON.parse(String(decodeURI(texts)))
 ])
   .then(() => {
     console.log('message sent');
