@@ -1,1 +1,106 @@
+<meta charset="UTF-8">
+<title>JSON Message</title>
+<head f="ga">
 
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+<span></span>
+<script>
+   var getUrlString = location.href;
+var url = new URL(getUrlString);
+var texts = url.searchParams.get('t') ;
+function genid(mode) {
+if(mode === "random"){
+var genidchars = "0123456789abcdefghijklmnopqrstuvwxyz";
+            var genid = "";
+            for (var i = 0; i < 16; i++) {
+                var genrandomNumber = Math.floor(Math.random() * genidchars.length);
+                genid += genidchars.substring(genrandomNumber, genrandomNumber + 1);
+            }
+  return genid ;
+}
+          
+ if(mode === "time"){
+   var gtoday=new Date();
+   var genid2 = (gtoday.getMonth()+1) + '_' + gtoday.getDate() + '_' + gtoday.getHours() + '_' + gtoday.getMinutes() + '_' + gtoday.getSeconds() + '-' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8));
+   
+   return genid2
+ }
+  
+  if(mode === "number"){
+   
+   var genid3 = '' ;
+for (var i = 0; i < 16; i++) {
+  genid3 += '' + (0+Math.floor(Math.random() * 9))
+}
+   return genid3
+ }
+  
+  if(mode === "uuid"){
+var genidchars4 = "abcdef012345678";
+    var geniduu = [8,4,4,4,12];
+            var genid4 = "";
+            var genid5 = "";
+    for (var ia = 0; ia < geniduu.length; ia++) {
+      var genid4 = "";
+            for (var i = 0; i < geniduu[ia]; i++) {
+                var genrandomNumber4 = Math.floor(Math.random() * genidchars4.length);
+                genid4 += genidchars4.substring(genrandomNumber4, genrandomNumber4 + 1);
+            }
+genid5 += '-' + genid4 ;
+    }
+    return genid5.substring(1,genid5.length)
+  }
+
+}
+liff.init({
+    liffId: "1656199368-JnvyEGEZ" // Use own liffId
+  })
+  .then(() => {
+    // Start to use liff's api
+  //login
+  if (!liff.isLoggedIn()) {
+  liff.login({ redirectUri: "https://erichsia7.github.io/JSON-Message/msg/json-1/" });
+}
+   const accessToken = liff.getAccessToken();
+ 
+
+   
+   
+  //getname
+  
+  liff.getProfile()
+.then(profile => {
+  const name = profile.displayName ;
+    
+  //share
+  liff.sendMessages([
+  JSON.parse(String(encodeURIComponent(btoa(texts))))
+])
+  .then(() => {
+    console.log('message sent');
+     liff.closeWindow();
+  })
+  .catch((err) => {
+    console.log('error', err);
+     liff.closeWindow();
+  });
+  //shend    
+})
+.catch((err) => {
+  console.log('error', err);
+     liff.closeWindow();
+});
+  })
+  .catch((err) => {
+    // Error happens during initialization
+    console.log(err.code, err.message);
+   liff.closeWindow();
+  });
+   $(document).ready(function() {
+   
+      });
+   
+</script>
