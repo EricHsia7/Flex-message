@@ -836,7 +836,10 @@ liff.init({
     // Error happens during initialization
     console.log(err.code, err.message);
   });
-  
+  function ReplaceAll(strOrg,strFind,strReplace)
+{
+    return strOrg.replace(new RegExp(strFind,"g"),strReplace);
+}
   $('#geturl').click(function() {
     if($('#msgurltype').attr('value') === '1') {
       
@@ -845,8 +848,9 @@ liff.init({
     }
     else {
       //alert('目前不支援，後續將更新😚');
-      $('#shortinp').val('https://line.me/R/app/1656199368-JnvyEGEZ?t=' + atob(encodeURI($('.msg-text').val()).replace(/\s/g, '')));
+      $('#shortinp').val('https://line.me/R/app/1656199368-JnvyEGEZ?t=' + atob(ReplaceAll(encodeURI($('.msg-text').val()),/\s/g,'')));
       $('.shorturlbg,.shorturl').fadeIn(222);
+      
     }
   });
   $('.closebtn').click(function() {
