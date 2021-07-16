@@ -844,7 +844,9 @@ liff.init({
       $('.shorturlbg,.shorturl').fadeIn(222);
     }
     else {
-      alert('目前不支援，後續將更新😚');
+      //alert('目前不支援，後續將更新😚');
+      $('#shortinp').val('https://line.me/R/app/1656199368-JnvyEGEZ?t=' + atob(encodeURIComponent($('.msg-text').val())));
+      $('.shorturlbg,.shorturl').fadeIn(222);
     }
   });
   $('.closebtn').click(function() {
