@@ -845,7 +845,7 @@ liff.init({
     }
     else {
       //alert('目前不支援，後續將更新😚');
-      $('#shortinp').val('https://line.me/R/app/1656199368-JnvyEGEZ?t=' + atob(encodeURI($('.msg-text').val())));
+      $('#shortinp').val('https://line.me/R/app/1656199368-JnvyEGEZ?t=' + atob(encodeURI($('.msg-text').val()).replace(/\s/g, '')));
       $('.shorturlbg,.shorturl').fadeIn(222);
     }
   });
